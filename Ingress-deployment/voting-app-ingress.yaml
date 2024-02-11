@@ -3,7 +3,6 @@ kind: Ingress
 metadata:
   name: voting-service
 spec:
-  # ingressClassName is necessary since v1.22 
   ingressClassName: nginx
   rules:
   - host: 192.168.3.80.xip.io
