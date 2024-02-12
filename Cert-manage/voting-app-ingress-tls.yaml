@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: voting-ingress
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - vote.devopsprac.pw
+    secretName: voting-app-tls
+  rules:
+  - host: vote.devopsprac.pw
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: voting-service
+            port:
+              number: 80

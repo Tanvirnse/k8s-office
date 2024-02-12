@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: voting-app
+  namespace: default
+spec:
+  dnsNames:
+    - vote.devopsprac.pw
+  secretName: app-tls
+  issuerRef:
+    name: letsencrypt-cluster-issuer
+    kind: ClusterIssuer
