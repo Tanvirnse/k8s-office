@@ -2,14 +2,14 @@ apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
   name: result-app-ingress
-  namespace: {{ .Values.namespace }}
+  namespace: default
 spec:
   entryPoints:
     - websecure
   routes:
-    - kind: Rule
-      match: Host(`192.168.3.221.sslip.io`)
-      priority: 10
+    - match: Host(`192.168.3.221.traefik.me`)
+      kind: Rule
       services:
         - name: result-service
           port: 80
+          
