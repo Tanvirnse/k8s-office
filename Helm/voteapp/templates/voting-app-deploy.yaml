@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .values.appName }}
+  name: {{ .values.name }}
   labels:
     name: {{ .values.appName }}
     app: {{ .values.appName }}
@@ -9,17 +9,17 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      name: {{ .values.appName }}
+      name: {{ .values.name }}
       app: {{ .values.appName }}
   template:
     metadata:
-      name: {{ .values.appName }}
+      name: {{ .values.name }}
       labels:
-        name: {{ .values.appName }}
+        name: {{ .values.name }}
         app: {{ .values.appName }}
     spec:
       containers:
-      - name: {{ .values.appName }}
+      - name: {{ .values.name }}
         image: "{{ .values.image.name }}:{{ .values.image.tag }}"
         ports:
         - containerPort: 80

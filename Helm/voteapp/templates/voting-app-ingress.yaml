@@ -1,7 +1,7 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ .values.appName }}
+  name: {{ .values.name }}
   namespace: {{ .values.namespace }}
 spec:
   entryPoints:

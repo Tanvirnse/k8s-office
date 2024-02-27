@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .values.appName }}
+  name: {{ .values.name }}
   labels:
-    name: {{ .values.appName }}
+    name: {{ .values.name }}
     app: {{ .values.appName }}
 spec:
   ports:
@@ -11,5 +11,5 @@ spec:
     port: 80
     targetPort: 80
   selector:
-    name: {{ .values.appName }}
+    name: {{ .values.name }}
     app: {{ .values.appName }}
