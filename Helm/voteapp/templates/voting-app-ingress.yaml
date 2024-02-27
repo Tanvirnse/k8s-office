@@ -1,8 +1,8 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ .values.name }}
-  namespace: {{ .values.namespace }}
+  name: {{ .Values.name }}
+  namespace: {{ .Values.namespace }}
 spec:
   entryPoints:
     - websecure
@@ -11,5 +11,5 @@ spec:
       match: Host(`192.168.3.221.nip.io`)
       priority: 10
       services:
-        - name: {{ .values.ingName }}
+        - name: {{ .Values.ingName }}
           port: 80
